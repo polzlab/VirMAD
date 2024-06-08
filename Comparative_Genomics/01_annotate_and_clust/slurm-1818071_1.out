@@ -1,0 +1,778 @@
+##LiSC job info: the temporary directory of your job is also available read-only until 3 days after job end on the login nodes (login01/login02) under this path: /lisc/slurm/node-b15/tmp/slurm-1818071
+##LiSC job info: Temporary folders of finished jobs are offline when their compute node went into power-saving sleep. For access to these folders, please contact the helpdesk.
+##LiSC job info: the temporary directory of your array master job is also available read-only until 3 days after job end on the login nodes (login01/login02) under this path: /lisc/slurm/node-b15/tmp/slurm-1818071
+##LiSC job info: Temporary folders of finished jobs are offline when their compute node went into power-saving sleep. For access to these folders, please contact the helpdesk.
+diamond v2.1.9.163 (C) Max Planck Society for the Advancement of Science, Benjamin Buchfink, University of Tuebingen
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 20
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Opening the input file...  [6.806s]
+Input database: ../../output/protclu/vibrio/prots.faa (3520321 sequences, 1126106327 letters)
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 3520321, letters: 1126106327)
+Block size = 3200000000
+Opening the input file...  [0s]
+Opening the output file...  [0.001s]
+Seeking in database...  [0s]
+Loading query sequences...  [4.776s]
+Length sorting queries...  [1.3s]
+Algorithm: Double-indexed
+Building query histograms...  [16.012s]
+Seeking in database...  [0s]
+Seeking in database...  [4.727s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [8.477s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [8.248s]
+Building query seed array...  [8.307s]
+Computing hash join...  [0.533s]
+Masking low complexity seeds...  [0.082s]
+Building kmer ranking...  [0.009s]
+Searching alignments...  [1.409s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0.012s]
+Clearing query masking...  [0.205s]
+Computing alignments... Loading trace points...  [2.101s]
+Sorting trace points...  [0.832s]
+Computing alignments...  [270.173s]
+Deallocating buffers...  [0.008s]
+Loading trace points...  [0s]
+ [273.392s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0.001s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0.008s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 327.555s
+Reported 11507815 pairwise alignments, 11507815 HSPs.
+824048 queries aligned.
+Finished search. #Edges: 22943344
+Allocating buffers...  [0s]
+Loading edges...  [0.304s]
+Sorting edges...  [0.357s]
+Computing edge counts...  [0.097s]
+Computing vertex cover...  [1.153s]
+Computing reassignment...  [0.073s]
+Clustering round 1 complete. #Input sequences: 3520321 #Clusters: 1010556 #Letters: 351305837 Time: 329s
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 3520321, letters: 1126106327)
+Block size = 2461538461
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0s]
+Loading query sequences...  [9.062s]
+Algorithm: Double-indexed
+Building query histograms...  [3.022s]
+Seeking in database...  [3.332s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.631s]
+Allocating buffers...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 1/4.
+Building reference seed array...  [0.603s]
+Building query seed array...  [0.647s]
+Computing hash join...  [0.293s]
+Masking low complexity seeds...  [0.11s]
+Searching alignments...  [108.093s]
+Deallocating memory...  [0.001s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 2/4.
+Building reference seed array...  [0.748s]
+Building query seed array...  [0.789s]
+Computing hash join...  [0.292s]
+Masking low complexity seeds...  [0.104s]
+Searching alignments...  [61.255s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 3/4.
+Building reference seed array...  [0.828s]
+Building query seed array...  [0.776s]
+Computing hash join...  [0.274s]
+Masking low complexity seeds...  [0.108s]
+Searching alignments...  [49.474s]
+Deallocating memory...  [0.001s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 4/4.
+Building reference seed array...  [0.592s]
+Building query seed array...  [0.608s]
+Computing hash join...  [0.279s]
+Masking low complexity seeds...  [0.112s]
+Searching alignments...  [45.113s]
+Deallocating memory...  [0.001s]
+Deallocating buffers...  [0.005s]
+Clearing query masking...  [0.074s]
+Computing alignments... Loading trace points...  [7.401s]
+Sorting trace points...  [3.181s]
+Computing alignments...  [184.728s]
+Deallocating buffers...  [0.028s]
+Loading trace points...  [0s]
+Sorting trace points...  [1.474s]
+Computing alignments...  [80.423s]
+Deallocating buffers...  [0.013s]
+Loading trace points...  [0s]
+ [277.376s]
+Deallocating reference...  [0.001s]
+Loading reference sequences...  [0.001s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0.002s]
+Closing the output file...  [0.001s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 564.701s
+Reported 2865998 pairwise alignments, 2865998 HSPs.
+273997 queries aligned.
+Finished search. #Edges: 5677533
+Allocating buffers...  [0s]
+Loading edges...  [0.09s]
+Sorting edges...  [0.103s]
+Computing edge counts...  [0.083s]
+Computing vertex cover...  [0.499s]
+Computing reassignment...  [0.023s]
+Computing merges...  [0.006s]
+Clustering round 2 complete. #Input sequences: 1010556 #Clusters: 741884 #Letters: 274587114 Time: 565s
+Generating output...  [1.972s]
+diamond v2.1.9.163 (C) Max Planck Society for the Advancement of Science, Benjamin Buchfink, University of Tuebingen
+Documentation, support and updates available at http://www.diamondsearch.org
+Please cite: http://dx.doi.org/10.1038/s41592-021-01101-x Nature Methods (2021)
+
+#CPU threads: 20
+Scoring parameters: (Matrix=BLOSUM62 Lambda=0.267 K=0.041 Penalties=11/1)
+Coverage cutoff: 60%
+Opening the database...  [10.397s]
+#Database sequences: 3520321, #Letters: 1126106327
+Reading the input file...  [3.271s]
+*** Initializing recluster iteration 1...  [0.116s]
+Block size: 8000000000 byte.
+Loading centroid block...  [5.25s]
+Processing centroid block 1, member block 1...  [704.072s]
+Joining centroid block 1...  [3.253s]
+Reported 0 pairwise alignments, 0 HSPs.
+0 queries aligned.
+Creating database of unaligned sequences...  [6.787s]
+#Sequences that failed to align against assigned centroid: 23594
+Creating centroid database...  [4.142s]
+Temporary directory: /tmp/slurm-1818071
+Running iterated search mode with sensitivity steps: faster fast
+#Target sequences to report alignments for: 1
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 741884, letters: 274587114)
+Block size = 4000000000
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Loading query sequences...  [0.033s]
+Algorithm: Double-indexed
+Building query histograms...  [0.135s]
+Seeking in database...  [0s]
+Loading reference sequences...  [1.084s]
+Length sorting reference...  [0.275s]
+Initializing dictionary...  [0.001s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [3.868s]
+Allocating buffers...  [0s]
+Processing query block 1, query iteration 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [2.063s]
+Building query seed array...  [0.085s]
+Computing hash join...  [0.02s]
+Masking low complexity seeds...  [0.002s]
+Searching alignments...  [0.029s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0.002s]
+Clearing query masking...  [0.002s]
+Opening temporary output file...  [0.001s]
+Computing alignments... Loading trace points...  [0.029s]
+Sorting trace points...  [0.01s]
+Computing alignments...  [1.178s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [1.233s]
+Deallocating reference...  [0.002s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Aligned 2584/23594 queries in this iteration, 2584/23594 total.
+Building query histograms...  [0.02s]
+Seeking in database...  [0s]
+Loading reference sequences...  [1.084s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [2.359s]
+Allocating buffers...  [0.001s]
+Processing query block 1, query iteration 2, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.655s]
+Building query seed array...  [0.028s]
+Computing hash join...  [0.138s]
+Masking low complexity seeds...  [0.007s]
+Searching alignments...  [2.641s]
+Deallocating memory...  [0.001s]
+Deallocating buffers...  [0.007s]
+Clearing query masking...  [0.002s]
+Opening temporary output file...  [0s]
+Computing alignments... Loading trace points...  [0.364s]
+Sorting trace points...  [0.108s]
+Computing alignments...  [8.822s]
+Deallocating buffers...  [0.003s]
+Loading trace points...  [0.001s]
+ [9.384s]
+Deallocating reference...  [0.002s]
+Loading reference sequences...  [0.001s]
+Deallocating buffers...  [0s]
+Aligned 1899/23594 queries in this iteration, 4483/23594 total.
+Joining output blocks... Loading dictionary...  [0.001s]
+Joining output blocks...  [0.019s]
+ [0.023s]
+Deallocating queries...  [0s]
+Loading query sequences...  [0.001s]
+Closing the output file...  [0.001s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 25.294s
+Reported 4483 pairwise alignments, 4483 HSPs.
+4483 queries aligned.
+Updating clustering...  [0.012s]
+Deallocating memory...  [0.035s]
+#Sequences that failed to align against any centroid: 19111
+Creating database of unmapped sequences...  [0.042s]
+Deallocating memory...  [0.003s]
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 19111, letters: 6669001)
+Block size = 3200000000
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0.005s]
+Loading query sequences...  [0.03s]
+Length sorting queries...  [0.007s]
+Algorithm: Double-indexed
+Building query histograms...  [0.11s]
+Seeking in database...  [0s]
+Seeking in database...  [0.021s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.073s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.073s]
+Building query seed array...  [0.074s]
+Computing hash join...  [0.003s]
+Masking low complexity seeds...  [0.002s]
+Building kmer ranking...  [0.001s]
+Searching alignments...  [0.009s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0.001s]
+Computing alignments... Loading trace points...  [0.017s]
+Sorting trace points...  [0.009s]
+Computing alignments...  [0.733s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [0.772s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 1.237s
+Reported 41097 pairwise alignments, 41097 HSPs.
+5473 queries aligned.
+Finished search. #Edges: 82125
+Allocating buffers...  [0s]
+Loading edges...  [0.003s]
+Sorting edges...  [0.006s]
+Computing edge counts...  [0.001s]
+Computing vertex cover...  [0.004s]
+Computing reassignment...  [0.001s]
+Clustering round 1 complete. #Input sequences: 19111 #Clusters: 6183 #Letters: 2547056 Time: 1s
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 19111, letters: 6669001)
+Block size = 2461538461
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0s]
+Loading query sequences...  [0.021s]
+Algorithm: Double-indexed
+Building query histograms...  [0.027s]
+Seeking in database...  [0.022s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.008s]
+Allocating buffers...  [0.001s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 1/4.
+Building reference seed array...  [0.009s]
+Building query seed array...  [0.009s]
+Computing hash join...  [0.003s]
+Masking low complexity seeds...  [0.002s]
+Searching alignments...  [0.248s]
+Deallocating memory...  [0.001s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 2/4.
+Building reference seed array...  [0.01s]
+Building query seed array...  [0.007s]
+Computing hash join...  [0.003s]
+Masking low complexity seeds...  [0.002s]
+Searching alignments...  [0.133s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 3/4.
+Building reference seed array...  [0.011s]
+Building query seed array...  [0.011s]
+Computing hash join...  [0.002s]
+Masking low complexity seeds...  [0.002s]
+Searching alignments...  [0.115s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 4/4.
+Building reference seed array...  [0.009s]
+Building query seed array...  [0.009s]
+Computing hash join...  [0.003s]
+Masking low complexity seeds...  [0.002s]
+Searching alignments...  [0.102s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0.001s]
+Clearing query masking...  [0.001s]
+Computing alignments... Loading trace points...  [0.023s]
+Sorting trace points...  [0.011s]
+Computing alignments...  [0.771s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [0.821s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 1.682s
+Reported 14631 pairwise alignments, 14631 HSPs.
+1120 queries aligned.
+Finished search. #Edges: 29241
+Allocating buffers...  [0s]
+Loading edges...  [0.001s]
+Sorting edges...  [0.005s]
+Computing edge counts...  [0.001s]
+Computing vertex cover...  [0.002s]
+Computing reassignment...  [0s]
+Computing merges...  [0s]
+Clustering round 2 complete. #Input sequences: 6183 #Clusters: 5062 #Letters: 2208862 Time: 1s
+*** Initializing recluster iteration 2...  [0.005s]
+Block size: 8000000000 byte.
+Loading centroid block...  [0.026s]
+Processing centroid block 1, member block 1...  [3.018s]
+Joining centroid block 1...  [0.019s]
+Reported 14631 pairwise alignments, 14631 HSPs.
+1120 queries aligned.
+Creating database of unaligned sequences...  [0.019s]
+#Sequences that failed to align against assigned centroid: 145
+Creating centroid database...  [0.026s]
+Temporary directory: /tmp/slurm-1818071
+Running iterated search mode with sensitivity steps: faster fast
+#Target sequences to report alignments for: 1
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 5062, letters: 2208862)
+Block size = 4000000000
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Loading query sequences...  [0s]
+Algorithm: Double-indexed
+Building query histograms...  [0.003s]
+Seeking in database...  [0s]
+Loading reference sequences...  [0.009s]
+Length sorting reference...  [0.002s]
+Initializing dictionary...  [0.001s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.043s]
+Allocating buffers...  [0s]
+Processing query block 1, query iteration 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.026s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.002s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Opening temporary output file...  [0.001s]
+Computing alignments... Loading trace points...  [0.003s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.014s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [0.026s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Aligned 128/145 queries in this iteration, 128/145 total.
+Building query histograms...  [0.002s]
+Seeking in database...  [0s]
+Loading reference sequences...  [0.009s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [0.024s]
+Allocating buffers...  [0s]
+Processing query block 1, query iteration 2, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.008s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.002s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.004s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Opening temporary output file...  [0.001s]
+Computing alignments... Loading trace points...  [0.003s]
+Sorting trace points...  [0.004s]
+Computing alignments...  [0.05s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [0.064s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0.001s]
+Deallocating buffers...  [0s]
+Aligned 6/145 queries in this iteration, 134/145 total.
+Joining output blocks... Loading dictionary...  [0s]
+Joining output blocks...  [0.002s]
+ [0.005s]
+Deallocating queries...  [0s]
+Loading query sequences...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 0.332s
+Reported 134 pairwise alignments, 134 HSPs.
+134 queries aligned.
+Updating clustering...  [0s]
+Deallocating memory...  [0.001s]
+#Sequences that failed to align against any centroid: 11
+Creating database of unmapped sequences...  [0.001s]
+Deallocating memory...  [0s]
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 11, letters: 13198)
+Block size = 3200000000
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0s]
+Loading query sequences...  [0s]
+Length sorting queries...  [0s]
+Algorithm: Double-indexed
+Building query histograms...  [0.003s]
+Seeking in database...  [0s]
+Seeking in database...  [0s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.001s]
+Allocating buffers...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Building kmer ranking...  [0s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Computing alignments... Loading trace points...  [0.002s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.025s]
+Deallocating buffers...  [0s]
+Loading trace points...  [0s]
+ [0.032s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 0.084s
+Reported 23 pairwise alignments, 23 HSPs.
+10 queries aligned.
+Finished search. #Edges: 46
+Allocating buffers...  [0s]
+Loading edges...  [0s]
+Sorting edges...  [0s]
+Computing edge counts...  [0s]
+Computing vertex cover...  [0s]
+Computing reassignment...  [0s]
+Clustering round 1 complete. #Input sequences: 11 #Clusters: 5 #Letters: 5595 Time: 0s
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 11, letters: 13198)
+Block size = 2461538461
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0s]
+Loading query sequences...  [0s]
+Algorithm: Double-indexed
+Building query histograms...  [0.002s]
+Seeking in database...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [0.001s]
+Allocating buffers...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 1/4.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.001s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 2/4.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 3/4.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 4/4.
+Building reference seed array...  [0.001s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Computing alignments... Loading trace points...  [0.001s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.009s]
+Deallocating buffers...  [0s]
+Loading trace points...  [0s]
+ [0.016s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 0.115s
+Reported 0 pairwise alignments, 0 HSPs.
+0 queries aligned.
+Finished search. #Edges: 0
+Allocating buffers...  [0s]
+Loading edges...  [0s]
+Sorting edges...  [0s]
+Computing edge counts...  [0s]
+Computing vertex cover...  [0s]
+Computing reassignment...  [0s]
+Computing merges...  [0s]
+Clustering round 2 complete. #Input sequences: 5 #Clusters: 5 #Letters: 5595 Time: 0s
+Block size: 8000000000 byte.
+Loading centroid block...  [0s]
+Processing centroid block 1, member block 1...  [1.002s]
+Joining centroid block 1...  [0s]
+Reported 0 pairwise alignments, 0 HSPs.
+0 queries aligned.
+#Sequences that failed to align against assigned centroid: 1
+Temporary directory: /tmp/slurm-1818071
+Running iterated search mode with sensitivity steps: faster fast
+#Target sequences to report alignments for: 1
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 5, letters: 5595)
+Block size = 4000000000
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Loading query sequences...  [0s]
+Algorithm: Double-indexed
+Building query histograms...  [0.002s]
+Seeking in database...  [0s]
+Loading reference sequences...  [0s]
+Length sorting reference...  [0s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.002s]
+Allocating buffers...  [0s]
+Processing query block 1, query iteration 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Opening temporary output file...  [0s]
+Computing alignments... Loading trace points...  [0s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.018s]
+Deallocating buffers...  [0s]
+Loading trace points...  [0s]
+ [0.025s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Aligned 0/1 queries in this iteration, 0/1 total.
+Building query histograms...  [0.002s]
+Seeking in database...  [0s]
+Loading reference sequences...  [0s]
+Initializing dictionary...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [0.002s]
+Allocating buffers...  [0s]
+Processing query block 1, query iteration 2, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.001s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.002s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Opening temporary output file...  [0s]
+Computing alignments... Loading trace points...  [0s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.019s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [0.027s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Aligned 0/1 queries in this iteration, 0/1 total.
+Joining output blocks... Loading dictionary...  [0s]
+Joining output blocks...  [0.002s]
+ [0.004s]
+Deallocating queries...  [0s]
+Loading query sequences...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 0.165s
+Reported 0 pairwise alignments, 0 HSPs.
+0 queries aligned.
+#Sequences that failed to align against any centroid: 1
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 1, letters: 4768)
+Block size = 3200000000
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0s]
+Loading query sequences...  [0.001s]
+Length sorting queries...  [0s]
+Algorithm: Double-indexed
+Building query histograms...  [0.003s]
+Seeking in database...  [0s]
+Seeking in database...  [0s]
+Initializing temporary storage...  [0.001s]
+Building reference histograms...  [0.001s]
+Allocating buffers...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.002s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Building kmer ranking...  [0s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Computing alignments... Loading trace points...  [0s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.01s]
+Deallocating buffers...  [0s]
+Loading trace points...  [0s]
+ [0.017s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 0.07s
+Reported 1 pairwise alignments, 1 HSPs.
+1 queries aligned.
+Finished search. #Edges: 2
+Allocating buffers...  [0s]
+Loading edges...  [0s]
+Sorting edges...  [0s]
+Computing edge counts...  [0s]
+Computing vertex cover...  [0s]
+Computing reassignment...  [0s]
+Clustering round 1 complete. #Input sequences: 1 #Clusters: 1 #Letters: 4768 Time: 0s
+Temporary directory: /tmp/slurm-1818071
+#Target sequences to report alignments for: unlimited
+Database: ../../output/protclu/vibrio/prots.faa (type: FASTA file, sequences: 1, letters: 4768)
+Block size = 2461538461
+Opening the input file...  [0s]
+Opening the output file...  [0s]
+Seeking in database...  [0s]
+Loading query sequences...  [0s]
+Algorithm: Double-indexed
+Building query histograms...  [0.002s]
+Seeking in database...  [0s]
+Initializing temporary storage...  [0s]
+Building reference histograms...  [0.001s]
+Allocating buffers...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 1/4.
+Building reference seed array...  [0.001s]
+Building query seed array...  [0.001s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 2/4.
+Building reference seed array...  [0.002s]
+Building query seed array...  [0.001s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 3/4.
+Building reference seed array...  [0.001s]
+Building query seed array...  [0.001s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Processing query block 1, reference block 1/1, shape 1/1, index chunk 4/4.
+Building reference seed array...  [0.001s]
+Building query seed array...  [0.001s]
+Computing hash join...  [0.001s]
+Masking low complexity seeds...  [0.001s]
+Searching alignments...  [0.001s]
+Deallocating memory...  [0s]
+Deallocating buffers...  [0s]
+Clearing query masking...  [0s]
+Computing alignments... Loading trace points...  [0s]
+Sorting trace points...  [0s]
+Computing alignments...  [0.009s]
+Deallocating buffers...  [0.001s]
+Loading trace points...  [0s]
+ [0.015s]
+Deallocating reference...  [0s]
+Loading reference sequences...  [0s]
+Deallocating buffers...  [0s]
+Deallocating queries...  [0s]
+Closing the output file...  [0s]
+Closing the database...  [0s]
+Cleaning up...  [0s]
+Total time = 0.112s
+Reported 0 pairwise alignments, 0 HSPs.
+0 queries aligned.
+Finished search. #Edges: 0
+Allocating buffers...  [0s]
+Loading edges...  [0s]
+Sorting edges...  [0s]
+Computing edge counts...  [0s]
+Computing vertex cover...  [0s]
+Computing reassignment...  [0s]
+Computing merges...  [0s]
+Clustering round 2 complete. #Input sequences: 1 #Clusters: 1 #Letters: 4768 Time: 0s
+Block size: 8000000000 byte.
+Loading centroid block...  [0s]
+Processing centroid block 1, member block 1...  [1.002s]
+Joining centroid block 1...  [0.001s]
+Reported 0 pairwise alignments, 0 HSPs.
+0 queries aligned.
+Deallocating memory...  [0s]
+Merging clusterings...  [0s]
+Deallocating memory...  [0.002s]
+Merging clusterings...  [0.001s]
+Generating output...  [2.215s]
+Closing the database...  [2.313s]
