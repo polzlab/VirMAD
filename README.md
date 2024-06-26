@@ -32,22 +32,26 @@ To set up the environment for running the scripts, follow these steps:
 1. Clone this repository to your local machine
  
 
-2. Navigate to the repository directory:
+2. Download the required data from [Zenodo](https://zenodo.org/records/12548715).
+   unzip the file and place the "models", "data", and "output" folders 
+   under the  VirMAD folder you just cloned
+
+3. Navigate to the repository directory:
    ```
    cd VirMAD
    ```
 
-3. Create a conda environment named `VirMAD-env` with Python 3.10:
+4. Create a conda environment named `VirMAD-env` with Python 3.10:
    ```
    conda create --name VirMAD-env python=3.10
    ```
 
-4. Activate the `VirMAD-env` environment:
+5. Activate the `VirMAD-env` environment:
    ```
    conda activate VirMAD-env
    ```
 
-5. Install the required packages:
+6. Install the required packages:
    ```
    pip install -r requirements.txt
    ```
