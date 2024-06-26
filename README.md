@@ -8,7 +8,7 @@ VirMAD works by:
 
 ## Table of Contents
 
-### Comparative Genomics
+### Genomic Analysis
 1. [Comparative Genomics](#comparative-genomics)
 
 ### VirMAD
