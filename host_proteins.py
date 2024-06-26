@@ -29,7 +29,7 @@ def prepare_pointer_results(df, system):
 
 def read_proteom(file):
     '''
-    metoda odczytu listy nazw i sekwencji z pliku typu fasta
+    method to read a list of names and sequences from a fasta file
     '''
     lon = []
     los = []
@@ -42,9 +42,7 @@ def read_proteom(file):
 
 def sequence_filling_method(range_t, names, sequences):
     '''
-    metoda uzupełniająca niepełny kontekst protein wokół proteiny centralnej w sytuacji
-    gdy proteina centralna leży w odległości mniejszej niż +/- 9 protein od granicy proteomu 
-    czyli listy protein
+    a method supplementing the incomplete protein context around the central protein in a situation where the central protein is located at a distance of less than +/- 9 proteins from the proteome boundary, i.e. the protein list
     '''
     ctx_proteins = []
     ctx_names = []

@@ -28,11 +28,11 @@ def init_pointer_models():
     '''
     models import
     '''
-    model_counterdef_xgb = pickle.load(open('./models/counterdef_XGB.pkl', "rb"))
-    model_counterdef_cnn = load_model('./models/counterdef_CNN.h5', compile=False)
-    model_orf_stage1 = load_model('./models/orf_stage1_pointer_model.h5', compile=False)
-    model_orf_stage2 = load_model('./models/orf_stage2_pointer_model.h5', compile=False)
-    return model_counterdef_xgb, model_counterdef_cnn, model_orf_stage1, model_orf_stage2
+    model_cds1_xgb = pickle.load(open('./models/CDs1_XGB.pkl', "rb"))
+    model_cds1_cnn = load_model('./models/CDs1_CNN.h5', compile=False)
+    model_cds2_stage1 = load_model('./models/CDs2_stage1_pointer_model.h5', compile=False)
+    model_cds2_stage2 = load_model('./models/CDs2_stage2_pointer_model.h5', compile=False)
+    return model_cds1_xgb, model_cds1_cnn, model_cds2_stage1, model_cds2_stage2
 
 ################################################################################
 
@@ -52,9 +52,9 @@ def read_proteom(file):
 
 #################################################################################
 
-def encode_lengths_orf(names, sequences, encoded):
+def encode_lengths_cds2(names, sequences, encoded):
     '''
-    orf protein lengths encoding
+    CDS2 protein lengths encoding
     '''
     lengths = []
     for s in sequences:
@@ -64,9 +64,9 @@ def encode_lengths_orf(names, sequences, encoded):
     enc = np.concatenate([encoded, lengths], axis = 1)
     return names, enc
 
-def encode_lengths_counterdef(names, sequences, encoded):
+def encode_lengths_cds1(names, sequences, encoded):
     '''
-    counterdef protein lenths encoding
+    CDS1 protein lengths encoding
     '''
     lengths = []
     for s in sequences:
@@ -105,15 +105,15 @@ def sequence_filling_method(range_t, names, sequences):
 
 #################################################################################
 
-def do_prediction_orf(virus, names, sequences, encoded, model, smodel):
+def do_prediction_cds2(virus, names, sequences, encoded, model, smodel):
     '''
-    orf candidate selecting function
+    CDS2 candidate selecting function
     
     virus - virus name
     names - protein names list in proteom file
     sequences - protein sequence list in protein file
     encoded - encoded matrix with lengths of proteins
-    model - orf protein pointer model
+    model - CDS2 protein pointer model
     smodel - structural protein filtering model
     
     '''
@@ -122,7 +122,7 @@ def do_prediction_orf(virus, names, sequences, encoded, model, smodel):
     encoded = np.array(encoded)
     encoded = encoded.reshape(encoded.shape[0], encoded.shape[1], 1)
     
-    #orf prediction
+    #CDS2 prediction
     poss = model.predict(encoded)
     poss = [e[0] for e in poss]
     predictions = [round(value) for value in poss]
@@ -164,47 +164,47 @@ def do_prediction_orf(virus, names, sequences, encoded, model, smodel):
 
 
 
-def do_prediction_counterdef(virus, names, sequences, encoded, model, cmodel):
+def do_prediction_cds1(virus, names, sequences, encoded, model, cmodel):
     '''
-    counterdef candidates selecting function
+    CDS1 candidates selecting function
     model - XGB classifier
     cmodel - CNN classifier
     '''
     X = encoded
     X_cnn = X.reshape(X.shape[0], X.shape[1], 1)
-    counterdef_r1 = model.predict_proba(X)[:,1]
-    counterdef_r2 = cmodel.predict(X_cnn).reshape(X_cnn.shape[0],)
-    counterdef_r = (counterdef_r1 * 0.4 + counterdef_r2 * 0.6)
+    cds1_r1 = model.predict_proba(X)[:,1]
+    cds1_r2 = cmodel.predict(X_cnn).reshape(X_cnn.shape[0],)
+    cds1_r = (cds1_r1 * 0.4 + cds1_r2 * 0.6)
 
-    idx = np.argsort(np.array(counterdef_r))
+    idx = np.argsort(np.array(cds1_r))
 
-    counterdef_r = np.array(counterdef_r)[idx]
+    cds1_r = np.array(cds1_r)[idx]
     names = np.array(names)[idx]
     sequences = np.array(sequences)[idx]
 
-    counterdef1 = names[-1]
-    counterdef2 = names[-2]
+    cds1_1 = names[-1]
+    cds1_2 = names[-2]
     
-    result1 = counterdef_r[-1]
-    result2 = counterdef_r[-2]
+    result1 = cds1_r[-1]
+    result2 = cds1_r[-2]
     
     seq1 = sequences[-1]
     seq2 = sequences[-2]
     
-    return virus, counterdef1, counterdef2, result1, result2, seq1, seq2
+    return virus, cds1_1, cds1_2, result1, result2, seq1, seq2
 
 #################################################################################
 
-def encode_virus_proteom(f, encoded, model_orf_stage1, model_orf_stage2, model_counterdef_xgb, model_counterdef_cnn):
+def encode_virus_proteom(f, encoded, model_cds2_stage1, model_cds2_stage2, model_cds1_xgb, model_cds1_cnn):
     '''
-    select phage protein regions for anti-defense candidates
+    select phage protein regions for CDS1 and CDS2 candidates
     
     f - .faa file proteom path
     encoded - .faa encoded proteins in np.array format path
-    models_orf_stage1 - stage 1 orf classifier
-    models_orf_stage2 - stage 2 orf classifier
-    model_counterdef_xgb - anti-defense XGB classifier
-    model_counterdef_cnn - anti-defense CNN classifier
+    models_cds2_stage1 - stage 1 CDS2 classifier
+    models_cds2_stage2 - stage 2 CDS2 classifier
+    model_cds1_xgb - CDS1 XGB classifier
+    model_cds1_cnn - CDS1 CNN classifier
     '''
     
     virus = f.split(',')[-1][:-4]
@@ -213,40 +213,40 @@ def encode_virus_proteom(f, encoded, model_orf_stage1, model_orf_stage2, model_c
     
     print(len(names), len(sequences), encoded_m.shape)
     
-    names, enc_orf = encode_lengths_orf(names, sequences, encoded_m) #orf lengths encoding
-    names, enc_counterdef = encode_lengths_counterdef(names, sequences, encoded_m) #counterdef lengths encoding
+    names, enc_cds2 = encode_lengths_cds2(names, sequences, encoded_m) #CDS2 lengths encoding
+    names, enc_cds1 = encode_lengths_cds1(names, sequences, encoded_m) #CDS1 lengths encoding
   
     
-    #select orf candidate
-    virus, orf_name, seq, best_score = do_prediction_orf(virus, names, sequences, enc_orf, model_orf_stage1, model_orf_stage2)
-    #select counterdef candidates
-    virus, counterdef1, counterdef2, result1, result2, seq1, seq2 = do_prediction_counterdef(virus, names, sequences, enc_counterdef, model_counterdef_xgb, model_counterdef_cnn) 
+    #select CDS2 candidate
+    virus, cds2_name, seq, best_score = do_prediction_cds2(virus, names, sequences, enc_cds2, model_cds2_stage1, model_cds2_stage2)
+    #select CDS1 candidates
+    virus, cds1_1, cds1_2, result1, result2, seq1, seq2 = do_prediction_cds1(virus, names, sequences, enc_cds1, model_cds1_xgb, model_cds1_cnn) 
 
     #check proteom list indices for each 
-    index_orf = names.index(orf_name) 
-    index_counterdef1 = names.index(counterdef1)
-    index_counterdef2 = names.index(counterdef2)
+    index_cds2 = names.index(cds2_name) 
+    index_cds1_1 = names.index(cds1_1)
+    index_cds1_2 = names.index(cds1_2)
     
     
-    #select range of interesting orf and counterdef proteins
-    range_orf = (index_orf - 9, index_orf + 10)
-    range_counterdef1 = (index_counterdef1 - 9, index_counterdef1 + 10)
-    range_counterdef2 = (index_counterdef2 - 9, index_counterdef2 + 10)
+    #select range of interesting CDS2 and CDS1 proteins
+    range_cds2 = (index_cds2 - 9, index_cds2 + 10)
+    range_cds1_1 = (index_cds1_1 - 9, index_cds1_1 + 10)
+    range_cds1_2 = (index_cds1_2 - 9, index_cds1_2 + 10)
     
-    #select names of orf and counterdef proteins to encode
-    _, names_orf = sequence_filling_method(range_orf, names, sequences)
-    _, names_counterdef1 = sequence_filling_method(range_counterdef1, names, sequences)
-    _, names_counterdef2 = sequence_filling_method(range_counterdef2, names, sequences)        
+    #select names of CDS2 and CDS1 proteins to encode
+    _, names_cds2 = sequence_filling_method(range_cds2, names, sequences)
+    _, names_cds1_1 = sequence_filling_method(range_cds1_1, names, sequences)
+    _, names_cds1_2 = sequence_filling_method(range_cds1_2, names, sequences)        
     
     
     #prepare dataframe with protein candidates to encode
     virus_output_dataframe = pd.DataFrame()
-    virus_output_dataframe['orf'] = names_orf
-    virus_output_dataframe['counterdef1'] = names_counterdef1
-    virus_output_dataframe['counterdef2'] = names_counterdef2
+    virus_output_dataframe['cds2'] = names_cds2
+    virus_output_dataframe['cds1_1'] = names_cds1_1
+    virus_output_dataframe['cds1_2'] = names_cds1_2
 
 
-    return virus_output_dataframe, index_orf, index_counterdef1, index_counterdef2
+    return virus_output_dataframe, index_cds2, index_cds1_1, index_cds1_2
 
 
 
@@ -260,18 +260,18 @@ args = parser.parse_args()
 
 #Init Models
 print('Init Models...')
-model_counterdef_xgb, model_counterdef_cnn, model_orf_stage1, model_orf_stage2 = init_pointer_models()
+model_cds1_xgb, model_cds1_cnn, model_cds2_stage1, model_cds2_stage2 = init_pointer_models()
 
 #Encode Phage
 print('Prepare Collections...')
 enc_v_dataframe, i_s, i_a1, i_a2 = encode_virus_proteom(args.path_phage_proteom, 
                               args.path_phage_encoded, 
-                              model_orf_stage1, 
-                              model_orf_stage2, 
-                              model_counterdef_xgb, 
-                              model_counterdef_cnn)
+                              model_cds2_stage1, 
+                              model_cds2_stage2, 
+                              model_cds1_xgb, 
+                              model_cds1_cnn)
 
-print('orf index: {}, counterdef1 index: {}, counterdef2 index: {}'.format(i_s, i_a1, i_a2))
+print('CDS2 index: {}, CDS1_1 index: {}, CDS1_2 index: {}'.format(i_s, i_a1, i_a2))
 
 #Export Results
 print('Export Results...')

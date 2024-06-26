@@ -195,9 +195,9 @@ def analyze_results(X, sys_id, mode='max'):
     dict_system = {0: sys_id,
                    1: 'taxo bact',
                    2: 'taxo phage',
-                   3: 'orf',
-                   4: 'counterdef1',
-                   5: 'counterdef2'}
+                   3: 'cds2',
+                   4: 'cds1_1',
+                   5: 'cds1_2'}
 
     for i in range(6):
         max_v = X[i].max()
@@ -256,9 +256,9 @@ def decode_results(highest_host_indices, highest_virus_indices, highest_host_val
     dict_system = {0: sys_id,
                1: 'taxo bact',
                2: 'taxo phage',
-               3: 'orf',
-               4: 'counterdef1',
-               5: 'counterdef2'}
+               3: 'cds2',
+               4: 'cds1_1',
+               5: 'cds1_2'}
     
     dfh = pd.read_csv(host_csv_path)
     dfp = pd.read_csv(phage_csv_path)
